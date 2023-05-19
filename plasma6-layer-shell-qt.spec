@@ -16,7 +16,9 @@ Source0:	http://download.kde.org/%{stable}/plasma/%{version}/%{name}-%{version}.
 %endif
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt6)
 BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6WaylandClient)
 BuildRequires:	cmake(WaylandProtocols)
