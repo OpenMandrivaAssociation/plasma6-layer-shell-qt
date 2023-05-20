@@ -1,5 +1,5 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define major 5
+%define major 6
 %define git 20230519
 
 Name:		plasma6-layer-shell-qt
@@ -14,6 +14,9 @@ Source0:	https://invent.kde.org/plasma/layer-shell-qt/-/archive/master/layer-she
 %else
 Source0:	http://download.kde.org/%{stable}/plasma/%{version}/%{name}-%{version}.tar.xz
 %endif
+# Bump soname to avoid a nasty conflict between Plasma 5 and 6 both
+# trying to own libLayerShellQtInterface.so.5
+Patch0:		layer-shell-qt-bump-soname.patch
 BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6)
@@ -37,7 +40,7 @@ Qt component to allow applications to make use of the Wayland wl-layer-shell pro
 %{_qtdir}/plugins/wayland-shell-integration/liblayer-shell.so
 # No need to split this into a package of its own, the library is useless
 # without the Qt plugin
-%{_libdir}/libLayerShellQtInterface.so.%{major}*
+%{_libdir}/libLayerShellQtInterface.so.*
 
 #------------------------------------------------------------------------------
 %define devname %mklibname LayerShellQtInterface -d
