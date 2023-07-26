@@ -1,6 +1,6 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 %define major 6
-%define git 20230722
+%define git 20230726
 
 Name:		plasma6-layer-shell-qt
 Version:	5.240.0
