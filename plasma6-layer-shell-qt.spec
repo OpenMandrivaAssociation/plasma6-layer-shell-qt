@@ -28,8 +28,6 @@ BuildRequires:	cmake(PlasmaWaylandProtocols)
 BuildRequires:	pkgconfig(wayland-client)
 BuildRequires:	pkgconfig(wayland-protocols)
 BuildRequires:	pkgconfig(xkbcommon)
-# Just to prevent pulling in Plasma 5
-BuildRequires:	plasma6-xdg-desktop-portal-kde
 
 %description
 Qt component to allow applications to make use of the Wayland wl-layer-shell protocol
