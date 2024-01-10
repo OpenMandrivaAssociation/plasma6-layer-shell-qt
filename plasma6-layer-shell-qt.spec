@@ -3,7 +3,7 @@
 #define git 20231103
 
 Name:		plasma6-layer-shell-qt
-Version:	5.91.0
+Version:	5.92.0
 Release:	%{?git:0.%{git}.}1
 Summary:	Qt component to allow applications to make use of the Wayland wl-layer-shell protocol
 Group:		System/Libraries
@@ -38,6 +38,8 @@ Qt component to allow applications to make use of the Wayland wl-layer-shell pro
 # No need to split this into a package of its own, the library is useless
 # without the Qt plugin
 %{_libdir}/libLayerShellQtInterface.so.*
+# Splitting the QML bits may make sense, but they're probably very common
+%{_qtdir}/qml/org/kde/layershell
 
 #------------------------------------------------------------------------------
 %define devname %mklibname LayerShellQtInterface6 -d
