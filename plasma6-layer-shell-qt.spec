@@ -5,7 +5,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		plasma6-layer-shell-qt
-Version:	6.1.4
+Version:	6.1.5
 Release:	%{?git:0.%{git}.}1
 Summary:	Qt component to allow applications to make use of the Wayland wl-layer-shell protocol
 Group:		System/Libraries
