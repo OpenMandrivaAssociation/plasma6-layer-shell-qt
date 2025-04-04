@@ -6,7 +6,7 @@
 
 Name:		plasma6-layer-shell-qt
 Version:	6.3.4
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Summary:	Qt component to allow applications to make use of the Wayland wl-layer-shell protocol
 Group:		System/Libraries
 License:	GPLv2
